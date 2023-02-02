@@ -37,7 +37,7 @@ function monmenu(element) {
     d.setAttribute('id', 'ctxmenu1');
     element.parentNode.appendChild(d);
     d.style.left = xMousePosition + "px";
-    d.style.top = yMousePosition + "px"; 
+    d.style.top = yMousePosition + "px";
     d.onmouseover = function(e) { this.style.cursor = 'pointer'; } 
     d.onclick = function(e) { element.parentNode.removeChild(d);  }
     document.body.onclick = function(e) { element.parentNode.removeChild(d);  }
