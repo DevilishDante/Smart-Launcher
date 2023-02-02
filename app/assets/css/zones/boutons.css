@@ -1,0 +1,39 @@
+#close-btn{
+    color: #D1201E;
+    padding: 5px; 
+    border-radius: 5px;
+    align-items: center;
+    padding-top: 15px;
+}
+#close-btn:hover{
+    background-color: #D1201E;
+    font-weight: bolder;
+    transform: scale(1.2);
+    color:aliceblue;
+}
+#maximize-btn{
+    color: #ed9939;
+    padding: 5px; 
+    border-radius: 5px;
+    align-items: center;
+    padding-top: 15px;
+}
+#maximize-btn:hover{
+    background-color: #ed9939;
+    font-weight: bolder;
+    transform: scale(1.2);
+    color:aliceblue;
+}
+#minimize-btn{
+    color: #39ede7;
+    padding: 5px; 
+    border-radius: 5px;
+    align-items: center;
+    padding-top: 15px;
+}
+#minimize-btn:hover{
+    background-color: #39ede7;
+    font-weight: bolder;
+    transform: scale(1.2);
+    color:aliceblue;
+}

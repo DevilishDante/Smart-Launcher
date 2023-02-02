@@ -1,0 +1,17 @@
+{
+  "name": "launcherv3",
+  "version": "1.0.0",
+  "description": "A smart launcher",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "start"
+  ],
+  "author": "Bastien Cugnoli",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^22.0.0"
+  }
+}

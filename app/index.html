@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Launcher V3</title>
+        <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
+        <META NAME="Author" CONTENT="Bastien Cugnoli">
+        <META NAME="Description" CONTENT="Launcher V2">
+        <META NAME="Keywords" CONTENT="Launcher V2">
+        <META name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+
+        <META NAME="Owns" CONTENT="Bastien Cugnoli">
+        <META NAME="Generator" CONTENT="Visual Studio Code">
+        <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
+        <META NAME="http.language" CONTENT="fr-FX">
+        <META name="theme-color" content="#1e85b4">
+        <META http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <META property="og:locale" content="fr_FR" />
+        <META property="og:type" content="website" />
+        <META property="og:title" content="Launcher V2" />
+        <META property="og:description" content="Launcher V2">
+        <META property="og:url" content="https://dev.elyria.fr/" />
+        <META property="og:site_name" content="Launcher V2" />
+
+        <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" as="style">
+        <link rel="preload" href="assets/css/styles.min.css" type="text/css" as="style">
+        <link rel="preload" href="assets/css/zones/boutons.min.css" type="text/css" as="style">
+        <link rel="preload" href="assets/css/animate.min.css" as ="style">
+        <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="assets/js/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script src="./data/tuiles.js"></script>
+        <link rel="stylesheet" href="assets/css/styles.min.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/zones/boutons.min.css" type="text/css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">   
+        <link rel="stylesheet" href="assets/css/animate.min.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/libs/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/libs/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/libs/favicons/favicon-16x16.png">
+        <link rel="manifest" href="assets/libs/favicons/site.webmanifest">
+    </head>
+    <body class="mx-auto box-b-alt">
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-header">Ajouter une tuile</div>
+                <div class="modal-content box-b-alt">
+                    <form class="mx-auto" action="/ma-page-de-traitement" method="post">
+                        <div>
+                            <label for="tuile_name">Titre :</label>
+                            <input type="text" id="tuile_name" name="tuile_name">
+                        </div>
+                        <div>
+                            <label styme="float: left" for="tuile_couleur">Couleur :</label>
+                            <div id="color-picker-wrapper">
+                                <input type="color" id="tuile_couleur" name="tuile_couleur" value="#000">
+                            </div>
+                            <br><span>Si aucune image utilisée</span>
+                        </div>
+                        <br>
+                        <div class="col-12 row">
+                            <label for="img_coice">Voulez-vous utiliser une image ? </label>
+                            <div class="col-6">
+                                <input type="radio" id="img_oui" name="img_choice" value="oui"></input><span> Oui </span>
+                            </div>
+                            <div class="col-6">
+                                <input type="radio" id="img_non" name="img_choice" value="non"></input><span> Non </span>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="tuile_chemin">Image :</label>
+                            <input type="textarea" id="tuile_chemin" name="tuile_chemin"></input>
+                        </div>
+                        <div>
+                            <label for="tuile_icon">Icône :</label>
+                            <input type="textarea" id="tuile_icon" name="tuile_icon"></input>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="create_tuile ('MES COUILLES CA MARCHE','#ffff', 'mescouilles', '/', 'non', 56)" class="btn-nav-b btn-text" type="button" id="submit">oui</button>
+                </div>
+            </div>
+        </div>
+        <div class="navi">
+            <a href="#" class="navi-btn" id="close-btn">
+                <span class="material-icons">close</span>
+            </a>
+            <a href="#" class="navi-btn" id="maximize-btn">
+                <span class="material-icons">check_box_outline_blank</span>
+            </a>
+            <a href="#" class="navi-btn" id="minimize-btn">
+                <span class="material-icons">minimize</span>
+            </a>
+            <div class="title">
+                <p class="titre" id="title_name"></p>
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn-nav-b btn-text" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="edit_tuile()">
+                <span class="material-icons">add_box</span>
+            </button>
+        </div>
+        <div class="row-br col-12" id="tuiles"></div>
+        <script src="./assets/js/core_context.js" type="text/javascript"></script>
+        <script src="./assets/js/jquery-3.4.1.min.js"></script>
+        <script src="./assets/js/core_boutons.js"></script>
+        <script src="./assets/js/core_tuiles.js"></script>
+        <script src="./assets/js/core_progs.js"></script>
+        <!--[if lt IE 9]>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">
+            </script>
+        <![endif]-->
+    </body> 
+</html>
