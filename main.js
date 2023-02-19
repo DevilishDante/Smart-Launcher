@@ -24,6 +24,7 @@ app.whenReady().then(() => {createWindow()})
 ipcMain.handle('title_buttons:close', () => window.close())
 ipcMain.handle('title_buttons:minimize', () => window.minimize())
 ipcMain.handle('title_buttons:maximize', () => window.isMaximized()?window.unmaximize():window.maximize())
+// ipcMain.handle('title_buttons:user', () => )
 ipcMain.handle('title:name', () => window.title)
 // actions tuilles
 ipcMain.handle('click_action:tile_exe', () => window.open_exe())

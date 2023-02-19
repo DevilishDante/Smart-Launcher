@@ -1,34 +1,4 @@
-var xMousePosition = 0;
-var yMousePosition = 0;
-
-document.oncontextmenu = function() {return false;}
-
-onmousemove = function(e){
-    xMousePosition = e.clientX;
-    yMousePosition = e.clientY;   
-}
-
-function rename(element) {
-    alert("Renommer"+element);
-}
-
-function edit(element) {
-    alert("Editer"+element);
-}
-
-function remove(element) {
-    alert("Supprimer"+element);
-}
-
-function rezise(element) {
-    // var div = document.createElement('div');
-    // div.innerHTML = document.getElementById('resize').textContent;
-    // document.body.appendChild(div);
-    alert("test"+element);
-}
-
-
-function monmenu(element) {
+function user(element) {
     // var name_tuile = data_tuiles.forEach(tuile => create_tuile(tuile.name));
     var x = document.getElementById('ctxmenu1');
     if(x) x.parentNode.removeChild(x);
@@ -68,10 +38,3 @@ function monmenu(element) {
 
     return false;
 }
-
-// var color_picker = document.getElementById("tuile_couleur");
-// var color_picker_wrapper = document.getElementById("color-picker-wrapper");
-// color_picker.onchange = function() {
-// 	color_picker_wrapper.style.backgroundColor = color_picker.value;    
-// }
-// color_picker_wrapper.style.backgroundColor = color_picke;

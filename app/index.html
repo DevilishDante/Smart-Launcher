@@ -4,8 +4,8 @@
         <title>Launcher V3</title>
         <META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
         <META NAME="Author" CONTENT="Bastien Cugnoli">
-        <META NAME="Description" CONTENT="Launcher V2">
-        <META NAME="Keywords" CONTENT="Launcher V2">
+        <META NAME="Description" CONTENT="Launcher v3">
+        <META NAME="Keywords" CONTENT="Launcher v3">
         <META name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
 
         <META NAME="Owns" CONTENT="Bastien Cugnoli">
@@ -17,10 +17,10 @@
 
         <META property="og:locale" content="fr_FR" />
         <META property="og:type" content="website" />
-        <META property="og:title" content="Launcher V2" />
-        <META property="og:description" content="Launcher V2">
+        <META property="og:title" content="Launcher v3" />
+        <META property="og:description" content="Launcher v3">
         <META property="og:url" content="https://dev.elyria.fr/" />
-        <META property="og:site_name" content="Launcher V2" />
+        <META property="og:site_name" content="Launcher v3" />
 
         <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" as="style">
         <link rel="preload" href="assets/css/styles.min.css" type="text/css" as="style">
@@ -89,17 +89,25 @@
             </div>
         </div>
         <div class="navi">
-            <a href="#" class="navi-btn" id="close-btn">
-                <span class="material-icons">close</span>
-            </a>
-            <a href="#" class="navi-btn" id="maximize-btn">
-                <span class="material-icons">check_box_outline_blank</span>
-            </a>
-            <a href="#" class="navi-btn" id="minimize-btn">
-                <span class="material-icons">minimize</span>
-            </a>
-            <div class="title">
+            <div class="nav-1">
+                <a href="#" class="navi-btn" id="close-btn">
+                    <span class="material-icons">close</span>
+                </a>
+                <a href="#" class="navi-btn" id="maximize-btn">
+                    <span class="material-icons">check_box_outline_blank</span>
+                </a>
+                <a href="#" class="navi-btn" id="minimize-btn">
+                    <span class="material-icons">minimize</span>
+                </a>
+            </div>
+            <div class="nav-2">
                 <p class="titre" id="title_name"></p>
+            </div>
+            <div class="nav-3">                
+                <a href="#" class="navi-btn" id="user-btn">
+                    <span class="material-icons">person</span>
+                    <span>User</span>
+                </a>
             </div>
         </div>
         <div>
@@ -112,6 +120,7 @@
         <script src="./assets/js/jquery-3.4.1.min.js"></script>
         <script src="./assets/js/core_boutons.js"></script>
         <script src="./assets/js/core_tuiles.js"></script>
+        <script src="./assets/js/core_user.js"></script>
         <script src="./assets/js/core_progs.js"></script>
         <!--[if lt IE 9]>
             <script

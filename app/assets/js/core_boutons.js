@@ -10,6 +10,10 @@ document.getElementById("maximize-btn").addEventListener("click",async (e) => {
 document.getElementById("minimize-btn").addEventListener("click",async (e) => {
     await window.title_buttons.minimize()
 });
+// ouvre le menu user
+document.getElementById("user-btn").addEventListener("click",async (e) => {
+    user(e)
+});
 
 // Recup le nom du prog pour la fenêtre
 Window;addEventListener('load', async _ => {document.getElementById("title_name").textContent = await window.title.name()})

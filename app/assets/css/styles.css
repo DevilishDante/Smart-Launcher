@@ -178,8 +178,20 @@ body {
   -webkit-app-region: drag;
   z-index: 1;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  
 }
-.title{
+.nav-1,.nav-2,.nav-3{
+  width: 33.3%;
+}
+.nav-1{
+  float: left;
+}
+.nav-2{
+  float: center;
+}
+.nav-3{
   float: right;
   margin-right: 10px;
 }
