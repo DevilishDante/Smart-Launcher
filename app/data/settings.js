@@ -2,6 +2,7 @@ var settings_user = [
     {"user_data" : {
         pseudo : "Dante",
         theme  : "dark",
+        lang : "FR_fr"
     }},
     {"settings" : {
         def_name: "Titre random",
