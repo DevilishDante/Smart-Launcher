@@ -24,7 +24,6 @@ document.getElementById("click-action").addEventListener("click", async (e) => {
 //         protocol: 'file:',
 //         slashes: true
 //       }))
-    
 // });
 
 // recuperer folder
@@ -32,4 +31,4 @@ document.getElementById("click-action").addEventListener("click", async (e) => {
 // {
 //     $.get(".", function(data) 
 //     {
-//         $("#file
+//         $("#fileNames"
