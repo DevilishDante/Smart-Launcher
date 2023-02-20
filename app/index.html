@@ -50,7 +50,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-header">Ajouter une tuile</div>
                 <div class="modal-content box-b-alt">
-                    <form class="mx-auto" action="/ma-page-de-traitement" method="post">
+                    <form class="mx-auto" id="form-tuile">
                         <div>
                             <label for="tuile_name">Titre :</label>
                             <input type="text" id="tuile_name" name="tuile_name">
@@ -81,10 +81,10 @@
                             <label for="tuile_icon">Icône :</label>
                             <input type="textarea" id="tuile_icon" name="tuile_icon"></input>
                         </div>
+                        <div class="modal-footer">
+                            <button class="btn-nav-b btn-text" type="submit" id="submit">Créer ma tuile</button>
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button onclick="create_tuile ('MES COUILLES CA MARCHE','#ffff', 'mescouilles', '/', 'non', 56)" class="btn-nav-b btn-text" type="button" id="submit">oui</button>
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
             </div>
         </div>
         <div>
-            <button type="button" class="btn-nav-b btn-text" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="edit_tuile()">
+            <button type="button" class="btn-nav-b btn-text" data-toggle="modal" data-target=".bd-example-modal-lg">
                 <span class="material-icons">add_box</span>
             </button>
         </div>

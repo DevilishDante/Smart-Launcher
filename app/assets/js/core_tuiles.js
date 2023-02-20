@@ -1,6 +1,6 @@
 data_tuiles.forEach(tuile => create_tuile(tuile.name,tuile.couleur,tuile.icon,tuile.chemin,tuile.img,tuile.id))
 
-function create_tuile (name="Aucun Titre",bg="#ffff", icon="mescouilles", chemin="/", img="non", id) {
+function create_tuile (name,bg, icon, chemin,img, id) {
     console.log(name,bg,icon,chemin,img)
     let carte_div = document.createElement('div')
     carte_div.dataset.id = id
@@ -14,8 +14,7 @@ function create_tuile (name="Aucun Titre",bg="#ffff", icon="mescouilles", chemin
     carte_a.classList.add('btn-box')
     carte_a.classList.add('btn-block')
     carte_a.style.backgroundColor = bg
-    // carte_a.href = chemin
-    // carte_a.addEventListener("click", () => click_exec(chemin))
+
     carte_a.addEventListener("contextmenu",function() {return monmenu(this)})
     let carte_img
     let carte_span
@@ -65,4 +64,23 @@ function create_context_tuile(name,bg,img,chemin,icon) {
         chemin: chemin,
         icon: icon,
     })
+}
+
+/**
+ * @param {{tuile_name, tuile_couleur, tuile_chemin, tuile_icon}} data
+ */
+function getFormData(data) {
+    const name = data.tuile_name || 'Aucun Titre'
+    const couleur = data.tuile_couleur || 'black'
+    const img = data.tuile_img || 'non'
+    const chemin = data.tuile_chemin || '/'
+    const icon = data.tuile_icon || 'help'
+    data = {tuile_name: name, tuile_couleur : couleur, tuile_icon: icon, tuile_chemin: chemin}
+    console.log(data)
+    create_tuile (name,couleur, icon, chemin,img)
+    create_context_tuile(name,couleur,icon,chemin,img)
+}
+document.getElementById('form-tuile').onsubmit = (e) => {
+    e.preventDefault()
+    getFormData(Object.fromEntries(new FormData(e.target).entries()))
 }
