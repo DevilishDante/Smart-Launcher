@@ -1,7 +1,6 @@
 data_tuiles.forEach(tuile => create_tuile(tuile.name,tuile.couleur,tuile.icon,tuile.chemin,tuile.img,tuile.id))
 
 function create_tuile (name,bg, icon, chemin,img, id) {
-    console.log(name,bg,icon,chemin,img)
     let carte_div = document.createElement('div')
     carte_div.dataset.id = id
     carte_div.dataset.name = name
@@ -47,14 +46,6 @@ function create_tuile (name,bg, icon, chemin,img, id) {
     document.getElementById("tuiles").appendChild(carte_div)
 }
 
-// function edit_tuile(name="Aucun Titre",bg="#ffff", icon="mescouilles", chemin="/", img="non") {
-//     FileSystemEntry.replace("test",name)
-// }
-
-// function remove_tuile(name="Aucun Titre",bg="#ffff", icon="mescouilles", chemin="/", img="non") {
-
-// }
-
 function create_context_tuile(name,bg,img,chemin,icon) {
     data_tuiles.push({
         id: data_tuiles.length,
@@ -66,21 +57,67 @@ function create_context_tuile(name,bg,img,chemin,icon) {
     })
 }
 
-/**
- * @param {{tuile_name, tuile_couleur, tuile_chemin, tuile_icon}} data
- */
-function getFormData(data) {
-    const name = data.tuile_name || 'Aucun Titre'
-    const couleur = data.tuile_couleur || 'black'
-    const img = data.tuile_img || 'non'
-    const chemin = data.tuile_chemin || '/'
-    const icon = data.tuile_icon || 'help'
-    data = {tuile_name: name, tuile_couleur : couleur, tuile_icon: icon, tuile_chemin: chemin}
-    console.log(data)
-    create_tuile (name,couleur, icon, chemin,img)
-    create_context_tuile(name,couleur,icon,chemin,img)
+// /**
+//  * @param {{tuile_name, tuile_couleur, tuile_chemin, tuile_icon}} data
+//  */
+// function getFormData(data) {
+//     const name = data.tuile_name || 'Aucun Titre'
+//     const couleur = data.tuile_couleur || 'black'
+//     const img = data.tuile_img || 'non'
+//     const chemin = data.tuile_chemin || '/'
+//     const icon = data.tuile_icon || 'help'
+//     data = {tuile_name: name, tuile_couleur : couleur, tuile_icon: icon, tuile_chemin: chemin}
+//     console.log(data)
+//     create_tuile (name,couleur, icon, chemin,img)
+//     create_context_tuile(name,couleur,icon,chemin,img)
+// }
+// document.getElementById('form-tuile').onsubmit = (e) => {
+//     e.preventDefault()
+//     getFormData(Object.fromEntries(new FormData(e.target).entries()))
+// }
+
+function toggleImage() {
+    var imageCheck = document.getElementById("tuile_imageCheck");
+    var imageField = document.getElementById("tuile_imageField");
+    var iconField = document.getElementById("tuile_iconField");
+    
+    if (imageCheck.checked == true) {
+        imageField.style.display = "block";
+        iconField.style.display = "none";
+        iconField.required = false;
+        imageField.required = true;
+    } else {
+        imageField.style.display = "none";
+        iconField.style.display = "block";
+        iconField.required = true;
+        imageField.required = false;
+    }
 }
-document.getElementById('form-tuile').onsubmit = (e) => {
-    e.preventDefault()
-    getFormData(Object.fromEntries(new FormData(e.target).entries()))
-}
+
+var create_form_tuile= document.getElementById("form-tuile");
+create_form_tuile.addEventListener("submit", function(event) {
+    event.preventDefault();
+    var nom = document.getElementById("tuile_nom").value;
+    var couleur = document.getElementById("tuile_couleur").value;
+    var imageCheck = document.getElementById("tuile_imageCheck").checked;
+    var img = "";
+    var icon = "";
+    var chemin = "";
+
+    if (imageCheck == true) {
+    img = document.getElementById("tuile_img").value;
+    } else {
+    icon = document.getElementById("tuile_icon").value;
+    }
+    chemin = document.getElementById("tuile_chemin").value; 
+    var data = {
+        "nom": nom,
+        "couleur": couleur,
+        "imageCheck": imageCheck,
+        "img": img,
+        "icon": icon,
+        "chemin": chemin
+    };
+    create_tuile (nom,couleur,icon, chemin,"non")
+    create_context_tuile(nom,couleur,icon,chemin,"non")
+});

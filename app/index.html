@@ -48,43 +48,75 @@
     <body class="mx-auto box-b-alt">
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-                <div class="modal-header">Ajouter une tuile</div>
                 <div class="modal-content box-b-alt">
-                    <form class="mx-auto" id="form-tuile">
+                    <div class="modal-header">Ajouter une tuile</div>
+
+                    <form id="form-tuile">
                         <div>
-                            <label for="tuile_name">Titre :</label>
-                            <input type="text" id="tuile_name" name="tuile_name">
+                            <label for="nom">Nom:</label>
+                            <input type="text" id="tuile_nom" name="tuile_nom" required>
                         </div>
                         <div>
-                            <label styme="float: left" for="tuile_couleur">Couleur :</label>
-                            <div id="color-picker-wrapper">
-                                <input type="color" id="tuile_couleur" name="tuile_couleur" value="#000">
+                            <label for="couleur">Couleur:</label>
+                            <input type="color" id="tuile_couleur" name="tuile_couleur" required>
+                        </div>
+                        <div>
+                            <label for="image">Voulez-vous une image?</label>
+                            <input type="checkbox" id="tuile_imageCheck" name="tuile_imageCheck" onclick="toggleImage()">
+                        </div>
+                        <div id="tuile_imageField" style="display:none">
+                            <label for="img">Image:</label>
+                            <input type="file" id="tuile_img" name="tuile_img">
+                        </div>
+                        <div id="tuile_iconField">
+                            <label for="icon">Icone:</label>
+                            <input type="text" id="tuile_icon" name="tuile_icon" required>
+                        </div>
+                        <div id="tuile_cheminField">
+                            <label for="chemin">Chemin:</label>
+                            <input type="text" id="tuile_chemin" name="tuile_chemin" required>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form> 
+
+        
+                    <!-- <form class="row" id="form-tuile">
+                        <div class="mx-auto">
+                            <div>
+                                <label for="tuile_name">Titre :</label>
+                                <input type="text" id="tuile_name" name="tuile_name">
                             </div>
-                            <br><span>Si aucune image utilisée</span>
-                        </div>
-                        <br>
-                        <div class="col-12 row">
-                            <label for="img_coice">Voulez-vous utiliser une image ? </label>
-                            <div class="col-6">
-                                <input type="radio" id="img_oui" name="img_choice" value="oui"></input><span> Oui </span>
+                            <div>
+                                <label styme="float: left" for="tuile_couleur">Couleur :</label>
+                                <div id="color-picker-wrapper">
+                                    <input type="color" id="tuile_couleur" name="tuile_couleur" value="#000">
+                                </div>
+                                <br><span>Si aucune image utilisée</span>
                             </div>
-                            <div class="col-6">
-                                <input type="radio" id="img_non" name="img_choice" value="non"></input><span> Non </span>
+                            <br>
+                            <div class="row">
+                                <label for="img_coice">Voulez-vous utiliser une image ? </label>
+                                <div class="col-6">
+                                    <input type="radio" id="img_oui" name="img_choice" value="oui"></input><span> Oui </span>
+                                </div>
+                                <div class="col-6">
+                                    <input type="radio" id="img_non" name="img_choice" value="non"></input><span> Non </span>
+                                </div>
+                            </div>
+                            <br>
+                            <div>
+                                <label for="tuile_chemin">Image :</label>
+                                <input type="textarea" id="tuile_chemin" name="tuile_chemin"></input>
+                            </div>
+                            <div>
+                                <label for="tuile_icon">Icône :</label>
+                                <input type="textarea" id="tuile_icon" name="tuile_icon"></input>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn-nav-b btn-text" type="submit" id="submit">Créer ma tuile</button>
                             </div>
                         </div>
-                        <br>
-                        <div>
-                            <label for="tuile_chemin">Image :</label>
-                            <input type="textarea" id="tuile_chemin" name="tuile_chemin"></input>
-                        </div>
-                        <div>
-                            <label for="tuile_icon">Icône :</label>
-                            <input type="textarea" id="tuile_icon" name="tuile_icon"></input>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn-nav-b btn-text" type="submit" id="submit">Créer ma tuile</button>
-                        </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
