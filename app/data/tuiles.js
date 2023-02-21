@@ -1,50 +1,7 @@
-var data_tuiles = [
-    {
-        id: 0,
-        name: "Projets",
-        couleur: "#127984",
-        img: "non",
-        chemin: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe",
-        icon: "people_alt",
-    },
-    {
-        id: 1,
-        name: "Titre random",
-        couleur: "#189e63",
-        img: "non",
-        chemin: "#",
-        icon: "fax",
-    },
-    {
-        id: 2,
-        name: "Gestionnaire de MDP",
-        couleur: "#18969e",
-        img: "non",
-        chemin: "#",
-        icon: "people_alt",
-    },
-    {
-        id: 3,
-        name: "Ouvrir le disque ?",
-        couleur: "#cb9011",
-        img: "non",
-        chemin: "#",
-        icon: "mouse",
-    },
-    {
-        id: 4,
-        name: "Non j'ai besoin de rien, merci !",
-        couleur: "#cb5711",
-        img: "non",
-        chemin: "#",
-        icon: "meeting_room",
-    },
-    {
-        id: 5,
-        name: "ouioui !",
-        couleur: "#cb5711",
-        img: "non",
-        chemin: "#",
-        icon: "meeting_room",
-    },
-]
+var data_tuiles = null
+
+window.addEventListener('load', async () => {
+    const tuiles = await window.tuile_handler.load()
+    data_tuiles = JSON.parse(tuiles)
+    data_tuiles.forEach(tuile => create_tuile(tuile.name, tuile.couleur, tuile.icon, tuile.chemin, tuile.img, tuile.id))
+})

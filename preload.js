@@ -14,8 +14,12 @@ contextBridge.exposeInMainWorld('title_buttons', {
 contextBridge.exposeInMainWorld('title', {
   name: () => ipcRenderer.invoke('title:name'),
 })
-contextBridge.exposeInMainWorld('click_action',{
+contextBridge.exposeInMainWorld('click_action', {
   tile_exe: () => ipcRenderer.invoke('click_action:tile_exe'),
   tile_file: () => ipcRenderer.invoke('click_action:tile_file'),
   tile_folder: () => ipcRenderer.invoke('click_action:tile_folder')
+})
+contextBridge.exposeInMainWorld('tuile_handler', {
+  save: (tuiles) => ipcRenderer.invoke('tuiles:save', tuiles),
+  load: () => ipcRenderer.invoke('tuiles:load'),
 })

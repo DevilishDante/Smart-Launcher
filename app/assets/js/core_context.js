@@ -18,6 +18,8 @@ function edit(element) {
 
 function remove(element) {
     alert("Supprimer"+element);
+    // supprime la tuile de data_tuiles puis:
+    // window.tuile_handler.save(data_tuiles)
 }
 
 function rezise(element) {

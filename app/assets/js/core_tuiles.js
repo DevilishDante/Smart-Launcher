@@ -1,6 +1,4 @@
-data_tuiles.forEach(tuile => create_tuile(tuile.name,tuile.couleur,tuile.icon,tuile.chemin,tuile.img,tuile.id))
-
-function create_tuile (name,bg, icon, chemin,img, id) {
+function create_tuile (name ,bg, icon, chemin,img, id) {
     let carte_div = document.createElement('div')
     carte_div.dataset.id = id
     carte_div.dataset.name = name
@@ -10,6 +8,7 @@ function create_tuile (name,bg, icon, chemin,img, id) {
     carte_div.style.marginBottom = "15px"
     let carte_a = document.createElement('a')
     carte_a.classList.add('box-dashboard')
+    carte_a.classList.add('box-d-3')
     carte_a.classList.add('btn-box')
     carte_a.classList.add('btn-block')
     carte_a.style.backgroundColor = bg
@@ -46,7 +45,7 @@ function create_tuile (name,bg, icon, chemin,img, id) {
     document.getElementById("tuiles").appendChild(carte_div)
 }
 
-function create_context_tuile(name,bg,img,chemin,icon) {
+function create_context_tuile(name,bg,icon,chemin,img) {
     data_tuiles.push({
         id: data_tuiles.length,
         name: name,
@@ -55,6 +54,7 @@ function create_context_tuile(name,bg,img,chemin,icon) {
         chemin: chemin,
         icon: icon,
     })
+    window.tuile_handler.save(data_tuiles)
 }
 
 // /**
@@ -83,41 +83,44 @@ function toggleImage() {
     
     if (imageCheck.checked == true) {
         imageField.style.display = "block";
+        imageField.querySelector('input').required = true;
         iconField.style.display = "none";
-        iconField.required = false;
-        imageField.required = true;
+        iconField.querySelector('input').required = false;
     } else {
         imageField.style.display = "none";
+        imageField.querySelector('input').required = false;
         iconField.style.display = "block";
-        iconField.required = true;
-        imageField.required = false;
+        iconField.querySelector('input').required = true;
     }
 }
 
 var create_form_tuile= document.getElementById("form-tuile");
-create_form_tuile.addEventListener("submit", function(event) {
-    event.preventDefault();
+create_form_tuile.addEventListener("submit", function(e) {
+    e.preventDefault();
     var nom = document.getElementById("tuile_nom").value;
     var couleur = document.getElementById("tuile_couleur").value;
     var imageCheck = document.getElementById("tuile_imageCheck").checked;
-    var img = "";
-    var icon = "";
-    var chemin = "";
+    var img = "non";
+    var icon = document.getElementById("tuile_icon").value;
+    var chemin = document.getElementById("tuile_chemin").value;
 
     if (imageCheck == true) {
-    img = document.getElementById("tuile_img").value;
+        const image = document.getElementById("tuile_img").files[0];
+        const reader = new FileReader()
+        reader.onloadend = () => {
+            img = reader.result
+            create_tuile (nom,couleur,icon, chemin,img)
+            create_context_tuile(nom,couleur,icon,chemin,img)
+        }
+        reader.readAsDataURL(image)
     } else {
-    icon = document.getElementById("tuile_icon").value;
+        create_tuile (nom,couleur,icon, chemin,img)
+        create_context_tuile(nom,couleur,icon,chemin,img)
     }
-    chemin = document.getElementById("tuile_chemin").value; 
-    var data = {
-        "nom": nom,
-        "couleur": couleur,
-        "imageCheck": imageCheck,
-        "img": img,
-        "icon": icon,
-        "chemin": chemin
-    };
-    create_tuile (nom,couleur,icon, chemin,"non")
-    create_context_tuile(nom,couleur,icon,chemin,"non")
 });
+// 
+// 
+// 
+// 
+// 
+// 
