@@ -15,8 +15,13 @@ function rename(element) {
 function edit(element) {
     alert("Editer"+element);
 }
-function remove(element) {
+function remove(element, id) {
     alert("Supprimer"+element);
+    data_tuiles.remove({
+        id: id
+    })
+    window.tuile_handler.save(data_tuiles)
+
     // supprime la tuile de data_tuiles puis:
     // window.tuile_handler.save(data_tuiles)
 }
@@ -26,7 +31,7 @@ function rezise(element) {
     // document.body.appendChild(div);
     alert("test"+element);
 }
-function monmenu(element) {
+function monmenu(element,id) {
     // var name_tuile = data_tuiles.forEach(tuile => create_tuile(tuile.name));
     var x = document.getElementById('ctxmenu1');
     if(x) x.parentNode.removeChild(x);
@@ -60,7 +65,7 @@ function monmenu(element) {
 
     var p4 = document.createElement('p');
     d.appendChild(p4);
-    p4.onclick=function() { remove(element) };  
+    p4.onclick=function() { remove(element,id) };  
     p4.setAttribute('class', 'ctxline');
     p4.innerHTML = "<span class='material-icons' style='font-size: 12pt;font-weight: bolder;'>delete</span> Suprimer";
 

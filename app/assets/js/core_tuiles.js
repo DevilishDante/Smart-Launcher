@@ -13,7 +13,7 @@ function create_tuile (name ,bg, icon, chemin,img, id) {
     carte_a.classList.add('btn-block')
     carte_a.style.backgroundColor = bg
 
-    carte_a.addEventListener("contextmenu",function() {return monmenu(this)})
+    carte_a.addEventListener("contextmenu",function() {return monmenu(this,id)})
     let carte_img
     let carte_span
     if (img == "non"){
