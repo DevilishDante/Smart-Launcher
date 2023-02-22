@@ -15,21 +15,17 @@ function rename(element) {
 function edit(element) {
     alert("Editer"+element);
 }
-
 function remove(element) {
     alert("Supprimer"+element);
     // supprime la tuile de data_tuiles puis:
     // window.tuile_handler.save(data_tuiles)
 }
-
 function rezise(element) {
     // var div = document.createElement('div');
     // div.innerHTML = document.getElementById('resize').textContent;
     // document.body.appendChild(div);
     alert("test"+element);
 }
-
-
 function monmenu(element) {
     // var name_tuile = data_tuiles.forEach(tuile => create_tuile(tuile.name));
     var x = document.getElementById('ctxmenu1');
@@ -70,10 +66,3 @@ function monmenu(element) {
 
     return false;
 }
-
-// var color_picker = document.getElementById("tuile_couleur");
-// var color_picker_wrapper = document.getElementById("color-picker-wrapper");
-// color_picker.onchange = function() {
-// 	color_picker_wrapper.style.backgroundColor = color_picker.value;    
-// }
-// color_picker_wrapper.style.backgroundColor = color_picke;
