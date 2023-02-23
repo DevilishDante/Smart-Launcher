@@ -1,0 +1,11 @@
+body {
+    overflow: hidden !important;
+}
+
+.tuilebox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem;
+    overflow-y: auto;
+}

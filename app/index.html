@@ -23,9 +23,9 @@
         <META property="og:site_name" content="Launcher v3" />
 
         <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" as="style">
-        <link rel="preload" href="assets/css/styles.min.css" type="text/css" as="style">
-        <link rel="preload" href="assets/css/zones/boutons.min.css" type="text/css" as="style">
-        <link rel="preload" href="assets/css/animate.min.css" as ="style">
+        <link rel="preload" href="./assets/css/styles.min.css" type="text/css" as="style">
+        <link rel="preload" href="./assets/css/zones/boutons.min.css" type="text/css" as="style">
+        <link rel="preload" href="./assets/css/animate.min.css" as="style">
         <link rel="preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -34,23 +34,23 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
         <script src="./data/tuiles.js"></script>
-        <link rel="stylesheet" href="assets/css/styles.min.css" type="text/css">
-        <link rel="stylesheet" href="assets/css/zones/boutons.min.css" type="text/css">
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">   
-        <link rel="stylesheet" href="assets/css/animate.min.css">
+        <link rel="stylesheet" href="./assets/css/styles.min.css" type="text/css">
+        <link rel="stylesheet" href="./assets/css/zones/boutons.min.css" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="./assets/css/animate.min.css">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/libs/favicons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/libs/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/libs/favicons/favicon-16x16.png">
-        <link rel="manifest" href="assets/libs/favicons/site.webmanifest">
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/libs/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/libs/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/libs/favicons/favicon-16x16.png">
+        <link rel="manifest" href="./assets/libs/favicons/site.webmanifest">
     </head>
     <body class="mx-auto box-b-alt">
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content box-b-alt">
                     <div class="modal-header">Ajouter une tuile</div>
-
                     <form id="form-tuile">
                         <div>
                             <label for="nom">Nom:</label>
@@ -77,50 +77,11 @@
                             <input type="text" id="tuile_chemin" name="tuile_chemin" required>
                         </div>
                         <button type="submit">Submit</button>
-                    </form> 
-
-        
-                    <!-- <form class="row" id="form-tuile">
-                        <div class="mx-auto">
-                            <div>
-                                <label for="tuile_name">Titre :</label>
-                                <input type="text" id="tuile_name" name="tuile_name">
-                            </div>
-                            <div>
-                                <label styme="float: left" for="tuile_couleur">Couleur :</label>
-                                <div id="color-picker-wrapper">
-                                    <input type="color" id="tuile_couleur" name="tuile_couleur" value="#000">
-                                </div>
-                                <br><span>Si aucune image utilisée</span>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <label for="img_coice">Voulez-vous utiliser une image ? </label>
-                                <div class="col-6">
-                                    <input type="radio" id="img_oui" name="img_choice" value="oui"></input><span> Oui </span>
-                                </div>
-                                <div class="col-6">
-                                    <input type="radio" id="img_non" name="img_choice" value="non"></input><span> Non </span>
-                                </div>
-                            </div>
-                            <br>
-                            <div>
-                                <label for="tuile_chemin">Image :</label>
-                                <input type="textarea" id="tuile_chemin" name="tuile_chemin"></input>
-                            </div>
-                            <div>
-                                <label for="tuile_icon">Icône :</label>
-                                <input type="textarea" id="tuile_icon" name="tuile_icon"></input>
-                            </div>
-                            <div class="modal-footer">
-                                <button class="btn-nav-b btn-text" type="submit" id="submit">Créer ma tuile</button>
-                            </div>
-                        </div>
-                    </form> -->
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="navi">
+        <nav class="navi">
             <div class="nav-1">
                 <a href="#" class="navi-btn" id="close-btn">
                     <span class="material-icons">close</span>
@@ -135,29 +96,24 @@
             <div class="nav-2">
                 <p class="titre" id="title_name"></p>
             </div>
-            <div class="nav-3">                
+            <div class="nav-3">
                 <a href="#" class="navi-btn" id="user-btn">
                     <span class="material-icons">person</span>
                     <span>User</span>
                 </a>
             </div>
-        </div>
+        </nav>
         <div>
             <button type="button" class="btn-nav-b btn-text" data-toggle="modal" data-target=".bd-example-modal-lg">
                 <span class="material-icons">add_box</span>
             </button>
         </div>
-        <div class="row-br col-12" id="tuiles"></div>
+        <div class="tuilebox" id="tuiles"></div>
         <script src="./assets/js/core_context.js" type="text/javascript"></script>
         <script src="./assets/js/jquery-3.4.1.min.js"></script>
         <script src="./assets/js/core_boutons.js"></script>
         <script src="./assets/js/core_tuiles.js"></script>
         <script src="./assets/js/core_user.js"></script>
         <script src="./assets/js/core_progs.js"></script>
-        <!--[if lt IE 9]>
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">
-            </script>
-        <![endif]-->
-    </body> 
+    </body>
 </html>

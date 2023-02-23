@@ -2,10 +2,10 @@ function create_tuile (name ,bg, icon, chemin,img, id) {
     let carte_div = document.createElement('div')
     carte_div.dataset.id = id
     carte_div.dataset.name = name
-    carte_div.classList.add('col-md-3')
-    carte_div.classList.add('col-sm-6')
-    carte_div.style.marginTop = "15px"
-    carte_div.style.marginBottom = "15px"
+    // carte_div.classList.add('col-md-3')
+    // carte_div.classList.add('col-sm-6')
+    // carte_div.style.marginTop = "15px"
+    // carte_div.style.marginBottom = "15px"
     let carte_a = document.createElement('a')
     carte_a.classList.add('box-dashboard')
     carte_a.classList.add('box-d-3')
