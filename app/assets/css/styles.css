@@ -69,6 +69,7 @@ html {
   text-shadow: 1px 1px black;
   color: rgb(151, 151, 151);
   border:2px solid transparent;
+  text-align: left !important;
 }
 .ctxline:hover{
   margin:0px;
