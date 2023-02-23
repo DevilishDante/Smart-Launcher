@@ -147,15 +147,16 @@ body {
   max-width: 100vw;
 }
 .navi {
-  width: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  -webkit-app-region: drag;
-  z-index: 1;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  
+    width: auto;
+    padding-top: 10px;
+    /* padding-bottom: 10px; */
+    -webkit-app-region: drag;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: #41474e;
+    margin-bottom: 5px;
 }
 .nav-1,.nav-2,.nav-3{width: 33.3%;}
 .nav-1{float: left;}
