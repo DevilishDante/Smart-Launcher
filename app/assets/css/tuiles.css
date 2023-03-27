@@ -67,8 +67,10 @@ body {
 .nothing-more{
     margin: auto;
     background-color: #41474e;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
+    padding: 1rem !important;
+    width: 50% !important;
 }
 
 /* 

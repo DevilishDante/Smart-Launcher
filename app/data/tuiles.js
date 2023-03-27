@@ -8,11 +8,11 @@ window.addEventListener('load', async () => {
         if (data_tuiles.length === 0) {
 
             var nothing = document.getElementById('tuiles')
-            var h2 = document.createElement('h2')
-            nothing.appendChild(h2)
-            h2.setAttribute('class', 'nothing-more');
-            h2.setAttribute('id', 'nothing-more');
-            h2.innerText = "Vous n'avez aucune tuile ,pour une créeer une, cliquez sur le + en bas de l'ecran 😎"
+            var div = document.createElement('div')
+            nothing.appendChild(div)
+            div.setAttribute('class', 'nothing-more');
+            div.setAttribute('id', 'nothing-more');
+            div.innerHTML = '<h2>C\'est le moment d\'ajouter une tuile 😎</h2><button type="button" class="btn-nav-b btn-text btn-upsidedown" data-toggle="modal" data-target=".bd-example-modal-lg">J\'en ajoute une !<span class="material-icons">add_box</span></button>'
         }
     } else {
         initTuile()
