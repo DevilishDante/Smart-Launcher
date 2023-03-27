@@ -8,7 +8,7 @@ if ($(this).scrollTop() > 200 ) {
 } else { 
     $('#up').removeAttr( 'style' );
         }   
- 
+
         });
     });
 });
