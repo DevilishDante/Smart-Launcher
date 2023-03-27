@@ -19,7 +19,7 @@ function create_tuile (name ,bg, icon, chemin,img, id) {
     if (img == "non"){
         carte_span = document.createElement('span')
         carte_span.classList.add('material-icons')
-        carte_span.style.fontSize = "100%"
+        carte_span.style.fontSize = "1rem"
         carte_span.textContent = icon
     } else {
         carte_img = document.createElement('img')
