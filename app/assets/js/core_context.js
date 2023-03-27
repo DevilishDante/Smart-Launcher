@@ -17,20 +17,17 @@ function edit(element) {
 }
 async function remove(id) {
     const indexASupprimer = data_tuiles.findIndex(data_tuiles => data_tuiles.id === id);
-    if (indexASupprimer !== -1) {
-        data_tuiles.splice(indexASupprimer, 1)
-    }
+    if (indexASupprimer !== -1) {data_tuiles.splice(indexASupprimer, 1)}
     await window.tuile_handler.save(data_tuiles)
     const parent = document.getElementById("tuiles")
     while (parent.firstChild) parent.removeChild(parent.firstChild)
-    console.log(parent.firstChild);
     data_tuiles.forEach(tuile => create_tuile(tuile.name, tuile.couleur, tuile.icon, tuile.chemin, tuile.img, tuile.id))
 }
 function rezise(element) {
     // var div = document.createElement('div');
     // div.innerHTML = document.getElementById('resize').textContent;
     // document.body.appendChild(div);
-    alert("test"+element);
+    alert("test "+element);
 }
 function monmenu(element,id) {
     // var name_tuile = data_tuiles.forEach(tuile => create_tuile(tuile.name));
