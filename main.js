@@ -55,7 +55,7 @@ ipcMain.handle('tuiles:load', async () => {
 ipcMain.handle('tuiles:initialize', async() => {
     const path = appdata + 'tuiles.json'
     try {
-        return await fs.promises.createFile(path, { encoding: 'utf8' })
+        await fs.promises.writeFile(path, JSON.stringify([]), { encoding: 'utf8' })
     } catch (error) {
         console.error(`Une erreur est survenue: ${error}`)
     }
