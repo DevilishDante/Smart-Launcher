@@ -1,4 +1,10 @@
 function create_tuile (name ,bg, icon, chemin,img, id) {
+    var nothingRem = document.getElementById('nothing-more')
+    if (nothingRem) {
+        nothingRem.remove()
+    }
+    
+    
     let carte_div = document.createElement('div')
     carte_div.dataset.id = id
     carte_div.dataset.name = name
@@ -49,6 +55,14 @@ function create_context_tuile(name,bg,icon,chemin,img) {
         icon: icon,
     })
     window.tuile_handler.save(data_tuiles)
+}
+function NoTuileAdd() {
+    var nothing = document.getElementById('tuiles')
+    var div = document.createElement('div')
+    nothing.appendChild(div)
+    div.setAttribute('class', 'nothing-more');
+    div.setAttribute('id', 'nothing-more');
+    div.innerHTML = '<h2>C\'est le moment d\'ajouter une tuile 😎</h2><button type="button" class="nothing-btn btn-nav-b btn-text btn-upsidedown" data-toggle="modal" data-target=".bd-example-modal-lg"><span class="material-icons">add_box</span> J\'en ajoute une !</button>'
 }
 
 // /**
@@ -114,7 +128,4 @@ create_form_tuile.addEventListener("submit", function(e) {
 });
 // 
 // 
-// 
-// 
-// 
-// 
+//

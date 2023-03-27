@@ -67,12 +67,21 @@ body {
 .nothing-more{
     margin: auto;
     background-color: #41474e;
-    border-radius: 8px;
+    border-radius: 3px;
     overflow: hidden;
     padding: 1rem !important;
     width: 50% !important;
+    border: 0.2px solid rgba(104, 104, 104, 0.632);
 }
 
+.nothing-btn{
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+    -ms-flex-align: baseline;
+    position: relative !important;
+    margin: 1rem;
+}
 /* 
 
 

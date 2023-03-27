@@ -22,6 +22,9 @@ async function remove(id) {
     const parent = document.getElementById("tuiles")
     while (parent.firstChild) parent.removeChild(parent.firstChild)
     data_tuiles.forEach(tuile => create_tuile(tuile.name, tuile.couleur, tuile.icon, tuile.chemin, tuile.img, tuile.id))
+    if (!data_tuiles.length) {
+        NoTuileAdd()
+    }
 }
 function rezise(element) {
     // var div = document.createElement('div');
