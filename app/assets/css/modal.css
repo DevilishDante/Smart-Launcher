@@ -18,3 +18,14 @@ input[type="text"], #box6 .mail input[type="email"] {
     margin-right: 2rem;
     text-align: center;
 }
+/* MODAL */
+.modal-header{background-color:#43474e;color: #6c3;border: 1px transparent; margin-bottom: 1rem;font-size: large;}
+.modal-footer{background-color: #242424;color: #09f;}
+.modal-body{background-color: rgb(213, 231, 205)}
+.modal-content{
+  -webkit-border-radius: .8rem;
+  -moz-border-radius: .8rem;
+  -ms-border-radius: .8rem;
+  -o-border-radius: .8rem;
+  border-radius: .8rem;
+}
