@@ -40,6 +40,7 @@ function create_tuile (name ,bg, icon, chemin,img, id) {
 }
 
 async function create_context_tuile(name,bg,icon,chemin,img) {
+    // var nothing = window.getElementById('nohting-more')
     data_tuiles.push({
         id: data_tuiles.length,
         name: name,

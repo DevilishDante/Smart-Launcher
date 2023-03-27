@@ -8,10 +8,11 @@ window.addEventListener('load', async () => {
         if (data_tuiles.length === 0) {
 
             var nothing = document.getElementById('tuiles')
-            var h1 = document.createElement('h1')
-            h1.innerText = "Vous n'avez aucune tuile ,pour une créeer une, cliquez sur le + en bas de l'ecran 😎"
-            h1.appendChild(nothing)
-
+            var h2 = document.createElement('h2')
+            nothing.appendChild(h2)
+            h2.setAttribute('class', 'nothing-more');
+            h2.setAttribute('id', 'nothing-more');
+            h2.innerText = "Vous n'avez aucune tuile ,pour une créeer une, cliquez sur le + en bas de l'ecran 😎"
         }
     } else {
         await window.tuile_handler.initialize()
