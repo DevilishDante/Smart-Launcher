@@ -15,15 +15,14 @@ function rename(element) {
 function edit(element) {
     alert("Editer"+element);
 }
-function remove(element, id) {
-    alert("Supprimer"+element);
-    data_tuiles.remove({
-        id: id
-    })
+function remove(id) {
+    //alert("La tuile "+id+" est bien suprimée !")
+    console.log("suprimession numéro : "+id)
+    const indexASupprimer = data_tuiles.findIndex(data_tuiles => data_tuiles.id === id);
+    if (indexASupprimer !== -1) {
+        data_tuiles.splice(indexASupprimer, 1)
+    }
     window.tuile_handler.save(data_tuiles)
-
-    // supprime la tuile de data_tuiles puis:
-    // window.tuile_handler.save(data_tuiles)
 }
 function rezise(element) {
     // var div = document.createElement('div');
@@ -65,7 +64,7 @@ function monmenu(element,id) {
 
     var p4 = document.createElement('p');
     d.appendChild(p4);
-    p4.onclick=function() { remove(element,id) };  
+    p4.onclick=function() { remove(id) };  
     p4.setAttribute('class', 'ctxline');
     p4.innerHTML = "<span class='material-icons' style='font-size: 12pt;font-weight: bolder;'>delete</span> Suprimer";
 

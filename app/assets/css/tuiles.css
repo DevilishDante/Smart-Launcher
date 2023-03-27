@@ -1,5 +1,18 @@
 body {
-    overflow: hidden !important;
+    overflow-x: hidden !important;
+}
+
+.btn-upsidedown{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 2px !important;
+}
+
+.center-b{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
 }
 
 .tuilebox {
@@ -8,7 +21,10 @@ body {
     width: 100%;
     gap: 1rem;
     overflow-y: auto;
-    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    margin-top: 4rem;
 }
 
 .tuilebox> div {
@@ -35,13 +51,17 @@ body {
     margin-top: 15%;
     height: 2px !important;
     width: 98% !important;
-    background-color: #ee88ee;
+    background-color: #22222252
 }
 
 .tuilebox> div> h3 {
     height: 100%;
     margin-top: 10%;
     text-align: center;
+}
+/* a remttre dans styles.css */
+.modal-c-custom{
+    margin-top: 25vh;
 }
 
 
