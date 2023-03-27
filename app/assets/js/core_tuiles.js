@@ -39,8 +39,7 @@ function create_tuile (name ,bg, icon, chemin,img, id) {
     document.getElementById("tuiles").appendChild(carte_div)
 }
 
-async function create_context_tuile(name,bg,icon,chemin,img) {
-    // var nothing = window.getElementById('nohting-more')
+function create_context_tuile(name,bg,icon,chemin,img) {
     data_tuiles.push({
         id: data_tuiles.length,
         name: name,
@@ -49,7 +48,7 @@ async function create_context_tuile(name,bg,icon,chemin,img) {
         chemin: chemin,
         icon: icon,
     })
-    await window.tuile_handler.save(data_tuiles)
+    window.tuile_handler.save(data_tuiles)
 }
 
 // /**
