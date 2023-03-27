@@ -49,35 +49,30 @@
     </head>
     <body class="mx-auto box-b-alt">
         <div class="modal-c-custom modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-sm">
                 <div class="modal-content box-b-alt">
                     <div class="modal-header">Ajouter une tuile</div>
-                    <form id="form-tuile">
-                        <div>
-                            <label for="nom">Nom:</label>
-                            <input type="text" id="tuile_nom" name="tuile_nom" required>
+                    <form id="form-tuile" class="row">
+                        <div class="col-md-12">
+                            <input class="input-center" type="text" id="tuile_nom" name="tuile_nom" placeholder="Nom de la tuile" required>
                         </div>
-                        <div>
-                            <label for="couleur">Couleur:</label>
-                            <input type="color" id="tuile_couleur" name="tuile_couleur" required>
+                        <div class="col-md-12">
+                            <input class="input-center" type="color" id="tuile_couleur" name="tuile_couleur" required>
                         </div>
-                        <div>
+                        <div class="col-md-12">
                             <label for="image">Voulez-vous une image?</label>
-                            <input type="checkbox" id="tuile_imageCheck" name="tuile_imageCheck" onclick="toggleImage()">
+                            <input class="input-center" type="checkbox" id="tuile_imageCheck" name="tuile_imageCheck" onclick="toggleImage()">
                         </div>
-                        <div id="tuile_imageField" style="display:none">
-                            <label for="img">Image:</label>
-                            <input type="file" id="tuile_img" name="tuile_img" accept="image/png, image/jpg, image/webp">
+                        <div class="col-md-12" id="tuile_imageField" style="display:none">
+                            <input class="input-center" type="file" id="tuile_img" name="tuile_img" accept="image/png, image/jpg, image/webp">
                         </div>
-                        <div id="tuile_iconField">
-                            <label for="icon">Icone:</label>
-                            <input type="text" id="tuile_icon" name="tuile_icon" required>
+                        <div class="col-md-12" id="tuile_iconField">
+                            <input class="input-center" type="text" id="tuile_icon" name="tuile_icon" placeholder="Nom de l'icone" required>
                         </div>
-                        <div id="tuile_cheminField">
-                            <label for="chemin">Chemin:</label>
-                            <input type="text" id="tuile_chemin" name="tuile_chemin" required>
+                        <div class="col-md-12" id="tuile_cheminField">
+                            <input class="input-center" type="text" id="tuile_chemin" name="tuile_chemin" placeholder="Chemin de la tuile" required>
                         </div>
-                        <button class="nothing-btn btn-box" type="submit">Submit</button>
+                        <button class="btn-nav-b btn-text btn-box" type="submit">Submit</button>
                     </form>
                 </div>
             </div>

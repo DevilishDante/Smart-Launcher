@@ -1,0 +1,20 @@
+.modal-c-custom{
+    padding-top: 25vh;
+}
+
+input[type="text"], #box6 .mail input[type="email"] {
+    background-color: var(--c-dark);
+    padding: 10px;
+    color: var(--c-txt);
+    border: 1px solid var(--c-dark);
+    border-bottom: 2px solid var(--c-main);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: large;
+}
+
+.input-center{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    text-align: center;
+}
