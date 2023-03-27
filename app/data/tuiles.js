@@ -14,11 +14,9 @@ window.addEventListener('load', async () => {
             h2.setAttribute('id', 'nothing-more');
             h2.innerText = "Vous n'avez aucune tuile ,pour une créeer une, cliquez sur le + en bas de l'ecran 😎"
         }
-    } 
-    // else {
-    //     await window.tuile_handler.initialize()
-    //     console.log("créations du fichier en cours")
-    // }
-}
-)
+    } else {
+        await window.tuile_handler.initialize()
+        console.log("créations du fichier en cours")
+    }
+})
 

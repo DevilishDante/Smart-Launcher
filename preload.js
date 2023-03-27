@@ -22,4 +22,5 @@ contextBridge.exposeInMainWorld('click_action', {
 contextBridge.exposeInMainWorld('tuile_handler', {
   save: (tuiles) => ipcRenderer.invoke('tuiles:save', tuiles),
   load: () => ipcRenderer.invoke('tuiles:load'),
+  initialize: () => ipcRenderer.invoke('tuiles:initialize')
 })

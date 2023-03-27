@@ -41,7 +41,7 @@ function monmenu(element,id) {
     d.style.top = yMousePosition + "px";
     d.onmouseover = function(e) { this.style.cursor = 'pointer'; } 
     d.onclick = function(e) { element.removeChild(d);  }
-    //document.body.onclick = function(e) { if (element.querySelector(d)) element.removeChild(d);  }
+    document.body.onclick = function(e) {element.removeChild(d);  }
 
     var p = document.createElement('p');
     d.appendChild(p);
