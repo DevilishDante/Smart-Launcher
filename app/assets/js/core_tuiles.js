@@ -39,7 +39,7 @@ function create_tuile (name ,bg, icon, chemin,img, id) {
     document.getElementById("tuiles").appendChild(carte_div)
 }
 
-function create_context_tuile(name,bg,icon,chemin,img) {
+async function create_context_tuile(name,bg,icon,chemin,img) {
     data_tuiles.push({
         id: data_tuiles.length,
         name: name,
@@ -48,7 +48,7 @@ function create_context_tuile(name,bg,icon,chemin,img) {
         chemin: chemin,
         icon: icon,
     })
-    window.tuile_handler.save(data_tuiles)
+    await window.tuile_handler.save(data_tuiles)
 }
 
 // /**

@@ -15,14 +15,16 @@ function rename(element) {
 function edit(element) {
     alert("Editer"+element);
 }
-function remove(id) {
-    //alert("La tuile "+id+" est bien suprimée !")
-    console.log("suprimession numéro : "+id)
+async function remove(id) {
     const indexASupprimer = data_tuiles.findIndex(data_tuiles => data_tuiles.id === id);
     if (indexASupprimer !== -1) {
         data_tuiles.splice(indexASupprimer, 1)
     }
-    window.tuile_handler.save(data_tuiles)
+    await window.tuile_handler.save(data_tuiles)
+    const parent = document.getElementById("tuiles")
+    while (parent.firstChild) parent.removeChild(parent.firstChild)
+    console.log(parent.firstChild);
+    data_tuiles.forEach(tuile => create_tuile(tuile.name, tuile.couleur, tuile.icon, tuile.chemin, tuile.img, tuile.id))
 }
 function rezise(element) {
     // var div = document.createElement('div');
@@ -42,7 +44,7 @@ function monmenu(element,id) {
     d.style.top = yMousePosition + "px";
     d.onmouseover = function(e) { this.style.cursor = 'pointer'; } 
     d.onclick = function(e) { element.removeChild(d);  }
-    document.body.onclick = function(e) { element.removeChild(d);  }
+    //document.body.onclick = function(e) { if (element.querySelector(d)) element.removeChild(d);  }
 
     var p = document.createElement('p');
     d.appendChild(p);
