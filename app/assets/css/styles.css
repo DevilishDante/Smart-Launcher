@@ -1,5 +1,6 @@
 @import url(./tuiles.css);
 @import url(./modal.css);
+@import url(./checkbox.css);
 
 /*override bootstrap styles*/
 :root{--c-main: #6c3;--c-bg-box: #f0f0f0;--c-dark: #1a1919;--c-txt: #ffefef;}

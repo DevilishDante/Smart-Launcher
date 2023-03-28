@@ -1,7 +1,8 @@
 :root{
     --size-h: 20px;
-    --size-w: 80px;
-    --border-radius: 5px
+    --size-w: 60px;
+    --border-radius: 5px;
+    user-select: none;
 }
 .modal-c-custom{padding-top: 25vh;}
 input[type="checkbox"].demo5 {display: none;}
@@ -102,4 +103,6 @@ input[type="file"]{
     align-items: center;
     text-align: center;
     margin: auto;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 }
