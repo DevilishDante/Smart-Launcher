@@ -13,6 +13,16 @@ input[type="text"], #box6 .mail input[type="email"] {
     font-size: large;
 }
 
+input[type="file"]{
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+    cursor: pointer;
+}
+
 .input-center{
     margin-left: 2rem;
     margin-right: 2rem;
