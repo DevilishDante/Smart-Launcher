@@ -1,16 +1,16 @@
 function user(element) {
     // var name_tuile = data_tuiles.forEach(tuile => create_tuile(tuile.name));
     var x = document.getElementById('ctxmenu1');
-    if(x) x.parentNode.removeChild(x);
+    // if(x) x.parentNode.removeChild(x);
     var d = document.createElement('div');
     d.setAttribute('class', 'ctxmenu');
     d.setAttribute('id', 'ctxmenu1');
-    element.parentNode.appendChild(d);
+    element.appendChild(d);
     d.style.left = xMousePosition + "px";
     d.style.top = yMousePosition + "px";
     d.onmouseover = function(e) { this.style.cursor = 'pointer'; } 
-    d.onclick = function(e) { element.parentNode.removeChild(d);  }
-    document.body.onclick = function(e) { element.parentNode.removeChild(d);  }
+    d.onclick = function(e) { element.removeChild(d);  }
+    document.body.onclick = function(e) { element.removeChild(d);  }
 
     var p = document.createElement('p');
     d.appendChild(p);
