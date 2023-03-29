@@ -1,7 +1,7 @@
 :root{
-    --size-h: 20px;
-    --size-w: 60px;
-    --border-radius: 5px;
+    --size-h: 33px;
+    --size-w: 66px;
+    --border-radius: 500px;
     user-select: none;
 }
 .modal-c-custom{padding-top: 25vh;}
@@ -86,6 +86,9 @@ input[type="file"]{
     margin-right: 2rem;
     text-align: center;
 }
+input:focus {
+    outline:  none;
+}
 /* MODAL */
 .modal-header{background-color:#43474e;color: #6c3;border: 1px transparent; margin-bottom: 1rem;font-size: large;}
 .modal-footer{background-color: #242424;color: #09f;}
@@ -96,6 +99,10 @@ input[type="file"]{
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+}
+.input-m{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
 .center {
     display: flex;

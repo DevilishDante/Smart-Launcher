@@ -60,3 +60,29 @@ ipcMain.handle('tuiles:initialize', async() => {
         console.error(`Une erreur est survenue: ${error}`)
     }
 })
+// users
+ipcMain.handle('user:save', async (ignore, user) => {
+    const path = appdata + 'user.json'
+    try {
+        await fs.promises.writeFile(path, JSON.stringify(user, null, 4), 'utf8')
+    } catch (error) {
+        console.error(`Une erreur est survenue: ${error}`)
+    }
+})
+ipcMain.handle('user:load', async () => {
+    const path = appdata + 'user.json'
+    try {
+        return await fs.promises.readFile(path, { encoding: 'utf8' })
+    } catch (error) {
+        console.error(`Une erreur est survenue: ${error}`)
+    }
+})
+
+ipcMain.handle('user:initialize', async() => {
+    const path = appdata + 'user.json'
+    try {
+        await fs.promises.writeFile(path, JSON.stringify([]), { encoding: 'utf8' })
+    } catch (error) {
+        console.error(`Une erreur est survenue: ${error}`)
+    }
+})
