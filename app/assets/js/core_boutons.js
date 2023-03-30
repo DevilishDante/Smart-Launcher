@@ -12,6 +12,7 @@ document.getElementById("minimize-btn").addEventListener("click",async (e) => {
 });
 // ouvre le menu user
 document.getElementById("user-btn").addEventListener("click",async (e) => {
+    // console.log(e)
     user(e)
 });
 

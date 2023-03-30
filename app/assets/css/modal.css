@@ -68,8 +68,7 @@ input[type="text"]{
     color: var(--c-txt);
     border: 1px solid var(--c-dark);
     border-bottom: 2px solid var(--c-main);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
     font-size: large;
 }
 input[type="file"]{
@@ -90,15 +89,19 @@ input:focus {
     outline:  none;
 }
 /* MODAL */
-.modal-header{background-color:#43474e;color: #6c3;border: 1px transparent; margin-bottom: 1rem;font-size: large;}
+.modal-header{background-color:#43474e;color: #6c3;border: 1px transparent; font-size: large;}
 .modal-footer{background-color: #242424;color: #09f;}
-.modal-body{background-color: rgb(213, 231, 205)}
+.modal-body{
+    border: 0.2px solid rgba(104, 104, 104, 0.632);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: none;}
 .modal-content{
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
 }
 .input-m{
     padding-top: 10px !important;
