@@ -1,12 +1,13 @@
 function user(element) {
     console.log(element)
     // var name_tuile = data_tuiles.forEach(tuile => create_tuile(tuile.name));
-    // var x = document.getElementById('ctxmenu1');
-    // // if(x) x.parentNode.removeChild(x);
+    var x = document.getElementById('ctxmenu1');
+    if(x) x.parentNode.removeChild(x);
     var d = document.createElement('div');
     d.setAttribute('class', 'ctxmenu');
     d.setAttribute('id', 'ctxmenu1');
     element.appendChild(d);
+
     d.style.left = xMousePosition + "px";
     d.style.top = yMousePosition + "px";
     d.onmouseover = function(e) { this.style.cursor = 'pointer'; } 
