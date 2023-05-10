@@ -24,3 +24,6 @@ contextBridge.exposeInMainWorld('tuile_handler', {
   load: () => ipcRenderer.invoke('tuiles:load'),
   initialize: () => ipcRenderer.invoke('tuiles:initialize')
 })
+contextBridge.exposeInMainWorld('link', {
+  open: (url) => ipcRenderer.invoke('link:open', url),
+})

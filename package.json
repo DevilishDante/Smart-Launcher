@@ -12,6 +12,7 @@
   "author": "Bastien Cugnoli",
   "license": "ISC",
   "dependencies": {
-    "electron": "^22.0.0"
+    "electron": "^22.0.0",
+    "shell": "^0.5.1"
   }
 }

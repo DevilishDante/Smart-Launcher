@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require("path")
 const fs = require('fs')
+const { openExternal } = require('electron').shell
 
 const appdata = (process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + "/.local/share")) + `\\${require(__dirname + '/package.json').name}\\`
 
@@ -17,6 +18,7 @@ const createWindow = () => {
         icon: path.join(__dirname, "./app/assets/img/logo.png"),
         resizable: true,
         webPreferences: {
+            devTools: true,
             preload: path.join(__dirname, 'preload.js'),
         },
     })
@@ -85,4 +87,8 @@ ipcMain.handle('user:initialize', async() => {
     } catch (error) {
         console.error(`Une erreur est survenue: ${error}`)
     }
+})
+
+ipcMain.handle('link:open', async (ignore, url) => {
+    openExternal(url)
 })

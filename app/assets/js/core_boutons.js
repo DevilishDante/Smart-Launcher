@@ -16,8 +16,15 @@ document.getElementById("user-btn").addEventListener("click",async (e) => {
     user(e)
 });
 
+document.querySelectorAll('[external-link]').forEach(link => {
+    if (!link.getAttribute('external-link').length) return
+    link.addEventListener('click', async (e) => {
+        await window.link.open(link.getAttribute('external-link'))
+    })
+})
+
 // Recup le nom du prog pour la fenêtre
-Window;addEventListener('load', async _ => {document.getElementById("title_name").textContent = await window.title.name()})
+window.addEventListener('load', async _ => {document.getElementById("title_name").textContent = await window.title.name()})
 
 // document.getElementById("click-action").addEventListener("click", async (e) => {
 //     await window.click_action.tile_file()
@@ -28,12 +35,4 @@ Window;addEventListener('load', async _ => {document.getElementById("title_name"
 //         pathname: path.join(__dirname, 'raccourcis/KeePassXC.exe - Raccourci'),
 //         protocol: 'file:',
 //         slashes: true
-//       }))
-// });
-
-// recuperer folder
-// $(document).ready(function () 
-// {
-//     $.get(".", function(data) 
-//     {
-//         $("#fileNames"
+//  
