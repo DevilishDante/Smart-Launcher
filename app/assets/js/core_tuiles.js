@@ -19,7 +19,7 @@ function create_tuile (name ,bg, icon, chemin,img, id) {
     if (img == "non"){
         carte_span = document.createElement('span')
         carte_span.classList.add('material-icons')
-        carte_span.style.fontSize = "1rem"
+        carte_span.style.fontSize = "11rem"
         carte_span.textContent = icon
     } else {
         carte_img = document.createElement('img')
@@ -105,11 +105,11 @@ function toggleImage() {
 var create_form_tuile= document.getElementById("form-tuile");
 create_form_tuile.addEventListener("submit", function(e) {
     e.preventDefault();
-    var nom = document.getElementById("tuile_nom").value;
-    var couleur = document.getElementById("tuile_couleur").value;
+    var nom = document.getElementById("tuile_nom").value || "non défini";
+    var couleur = document.getElementById("tuile_couleur").value || "#6c3";
     var imageCheck = document.getElementById("tuile_imageCheck").checked;
     var img = "non";
-    var icon = document.getElementById("tuile_icon").value;
+    var icon = document.getElementById("tuile_icon").value || "help";
     var chemin = document.getElementById("tuile_chemin").value;
 
     if (imageCheck == true) {

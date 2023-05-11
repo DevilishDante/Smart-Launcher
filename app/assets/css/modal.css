@@ -4,7 +4,10 @@
     --border-radius: 500px;
     user-select: none;
 }
-.modal-c-custom{padding-top: 25vh;}
+.modal-c-custom{
+    padding-top: 20vh;background-color: #00000087 !important;
+    backdrop-filter: blur(1rem) !important;
+}
 input[type="checkbox"].demo5 {display: none;}
 input[type="checkbox"].demo5 + label {
     box-sizing: border-box;
