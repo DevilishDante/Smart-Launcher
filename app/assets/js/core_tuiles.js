@@ -4,7 +4,6 @@ function create_tuile (name ,bg, icon, chemin,img, id) {
         nothingRem.remove()
     }
     
-    
     let carte_div = document.createElement('div')
     carte_div.dataset.id = id
     carte_div.dataset.name = name
@@ -62,27 +61,8 @@ function NoTuileAdd() {
     nothing.appendChild(div)
     div.setAttribute('class', 'nothing-more');
     div.setAttribute('id', 'nothing-more');
-    div.innerHTML = '<h2>C\'est le moment d\'ajouter une tuile 😎</h2><button type="button" class="nothing-btn btn-nav-b btn-text btn-upsidedown" data-toggle="modal" data-target=".bd-example-modal-lg"><span class="material-icons">add_box</span> J\'en ajoute une !</button>'
+    div.innerHTML = '<h2>C\'est le moment d\'ajouter une tuile 😎</h2><button type="button" class="nothing-btn btn-nav-b btn-text btn-upsidedown" data-toggle="modal" data-target="#tuile-create"><span class="material-icons">add_box</span> J\'en ajoute une !</button>'
 }
-
-// /**
-//  * @param {{tuile_name, tuile_couleur, tuile_chemin, tuile_icon}} data
-//  */
-// function getFormData(data) {
-//     const name = data.tuile_name || 'Aucun Titre'
-//     const couleur = data.tuile_couleur || 'black'
-//     const img = data.tuile_img || 'non'
-//     const chemin = data.tuile_chemin || '/'
-//     const icon = data.tuile_icon || 'help'
-//     data = {tuile_name: name, tuile_couleur : couleur, tuile_icon: icon, tuile_chemin: chemin}
-//     console.log(data)
-//     create_tuile (name,couleur, icon, chemin,img)
-//     create_context_tuile(name,couleur,icon,chemin,img)
-// }
-// document.getElementById('form-tuile').onsubmit = (e) => {
-//     e.preventDefault()
-//     getFormData(Object.fromEntries(new FormData(e.target).entries()))
-// }
 
 function toggleImage() {
     var imageCheck = document.getElementById("tuile_imageCheck");
@@ -126,6 +106,4 @@ create_form_tuile.addEventListener("submit", function(e) {
         create_context_tuile(nom,couleur,icon,chemin,img)
     }
 });
-// 
-// 
 //

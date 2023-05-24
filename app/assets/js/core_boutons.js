@@ -25,14 +25,3 @@ document.querySelectorAll('[external-link]').forEach(link => {
 
 // Recup le nom du prog pour la fenêtre
 window.addEventListener('load', async _ => {document.getElementById("title_name").textContent = await window.title.name()})
-
-// document.getElementById("click-action").addEventListener("click", async (e) => {
-//     await window.click_action.tile_file()
-// });
-
-// document.getElementById("kp-btn").addEventListener("click", (e) => {
-//     document.loadURL(url.format({
-//         pathname: path.join(__dirname, 'raccourcis/KeePassXC.exe - Raccourci'),
-//         protocol: 'file:',
-//         slashes: true
-//  
